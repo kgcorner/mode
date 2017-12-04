@@ -4,6 +4,8 @@ import crypto from 'crypto';
 import admin from 'firebase-admin';
 import serviceAccount from './private/peerchat-e145d-firebase-adminsdk-b2upf-d0e552f7f4.json'
 import secret from './private/secret.json'
+import "./signaling-server.js";
+
 
 let app = express();
 
@@ -41,6 +43,9 @@ app.get("/api/room", (req, res) => {
     response.name=name;
     res.json(response);
 });
+
+
+
 
 
 app.listen(8000, () => console.log('Example app listening on port 8000!'))
